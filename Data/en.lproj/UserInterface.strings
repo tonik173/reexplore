@@ -1,0 +1,22 @@
+/* 
+  UserInterface.strings
+  Reexplore
+
+  Created by Toni Kaufmann on 17.01.21.
+  Copyright © 2021 n3xd software studios ag. All rights reserved.
+*/
+
+"ok"                        = "Ok";
+"show"                      = "Show";
+"cancel"                    = "Cancel";
+        
+
+"uploadGpx"                 = "Upload GPX track";
+
+"reset"                     = "Reset";
+
+// Menu
+"showTrack"                 = "Show Track";
+"hideTrack"                 = "Hide Track";
+"record"                    = "Record";
+"recording"                 = "Recording";
