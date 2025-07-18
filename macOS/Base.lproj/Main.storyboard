@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="IE6-9s-vUX">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="18122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <plugIn identifier="com.apple.MapKitIBPlugin" version="18122"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="ReExplore" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="ReExplore" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About ReExplore" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                                <segue destination="9g5-Np-ddz" kind="show" id="Z86-75-4iF"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Play Intro Movie" id="9ea-yE-Ckg">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <segue destination="8gP-EW-VV7" kind="show" id="2pp-Rs-ywJ"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="07o-oS-A0S" kind="show" id="zrv-Nx-8h4"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Services" id="NMo-om-nkz">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
+                                        <menuItem title="Hide Reexplore" keyEquivalent="h" id="Olw-nP-bQN">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit ReExplore" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="View" id="H8h-7b-M4v">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="View" id="HyV-fh-RgO">
+                                    <items>
+                                        <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="toggleToolbarShown:" target="Ady-hI-5gd" id="BXY-wc-z0C"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Customize Toolbar…" id="1UK-8n-QPP">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="runToolbarCustomizationPalette:" target="Ady-hI-5gd" id="pQI-g3-MTW"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="hB3-LF-h0Y"/>
+                                        <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="toggleFullScreen:" target="Ady-hI-5gd" id="dU3-MA-1Rq"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="khW-kE-BaA"/>
+                                        <menuItem title="Map" state="on" keyEquivalent="h" identifier="map" id="iHi-n8-ajy" userLabel="Map">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="chooseTerrain:" target="Ady-hI-5gd" id="KGt-VC-nr1"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Satelite" tag="1" keyEquivalent="j" identifier="satelite" id="gKs-Np-u7r" userLabel="Satelite">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="chooseTerrain:" target="Ady-hI-5gd" id="PqD-co-0P3"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Mixed" tag="2" keyEquivalent="k" identifier="mixed" id="KOB-CK-fWi" userLabel="Mixed">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="chooseTerrain:" target="Ady-hI-5gd" id="HMB-fQ-qsv"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Wcs-cx-03E"/>
+                                        <menuItem title="3D View" state="on" keyEquivalent="p" identifier="3d" id="sVM-bk-G5z">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="chooseCamera:" target="Ady-hI-5gd" id="qUf-qW-HUp"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Orthographic" keyEquivalent="o" identifier="ortho" id="oaT-NS-Vsr">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="chooseCamera:" target="Ady-hI-5gd" id="FP0-zp-0Ce"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Towards First Person View" keyEquivalent="g" identifier="ground" id="Xd3-Uv-cBd" userLabel="Closer to the ground">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="aboveGroundChanged:" target="Ady-hI-5gd" id="BNt-vQ-dy1"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Towards Birds View" keyEquivalent="b" identifier="bird" id="Rz5-aX-cea">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="aboveGroundChanged:" target="Ady-hI-5gd" id="oh5-6B-viF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Action" id="oWp-mu-dI8" userLabel="Action">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Action" id="rkl-eR-kge">
+                                    <items>
+                                        <menuItem title="Slower" keyEquivalent="-" identifier="slow" id="qEJ-aN-ZrB">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="speedChanged:" target="Ady-hI-5gd" id="t3s-1H-pJo"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Faster" keyEquivalent="+" identifier="fast" id="qTl-3k-kje">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="speedChanged:" target="Ady-hI-5gd" id="1WY-AV-ans"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="EYl-h4-LxZ"/>
+                                        <menuItem title="Forward" keyEquivalent="w" identifier="forward" id="xkC-d4-ym2">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="directionChanged:" target="Ady-hI-5gd" id="uhW-gE-MQj"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Backward" keyEquivalent="s" identifier="backward" id="CFL-M3-h50">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="directionChanged:" target="Ady-hI-5gd" id="CTZ-Eu-5U2"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Left" keyEquivalent="a" identifier="left" id="oIP-mu-Qyb">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="directionChanged:" target="Ady-hI-5gd" id="E73-qH-9gW"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Right" keyEquivalent="d" identifier="right" id="nfM-dX-v2D">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="directionChanged:" target="Ady-hI-5gd" id="WDZ-W8-jRt"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Navigation" id="dzr-In-iSg">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Navigation" id="51V-55-SPK">
+                                    <items>
+                                        <menuItem title="Choose Location…" keyEquivalent="l" id="8oI-Z2-YZc" userLabel="Choose location">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="chooseLocation:" target="Ady-hI-5gd" id="ccw-bA-ZiA"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="EVv-vJ-FEl"/>
+                                        <menuItem title="Open Map App…" keyEquivalent="m" id="XWM-9u-4iM" userLabel="Open map">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openMap:" target="Ady-hI-5gd" id="nNq-5e-eNW"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Track" id="whL-Rt-Gwu" userLabel="Track">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Track" autoenablesItems="NO" userInterfaceLayoutDirection="leftToRight" id="ODa-us-q4z">
+                                    <items>
+                                        <menuItem title="Upload GPX…" keyEquivalent="u" identifier="upload" id="fwq-pJ-EEy" userLabel="Upload">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="uploadTrack:" target="Ady-hI-5gd" id="UTu-s2-s74"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show Track" keyEquivalent="i" identifier="showHideTrack" id="soR-Uy-aHh" userLabel="Show/hide track">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showHideTrack:" target="Ady-hI-5gd" id="eeV-Bs-a3j"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="gWc-3P-EjW"/>
+                                        <menuItem title="Record" keyEquivalent="r" identifier="record" id="lva-Wl-Iq1">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Record">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="smallSystem"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="recordTrack:" target="Ady-hI-5gd" id="xYT-js-CNS"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Set Flag" keyEquivalent="t" identifier="setFlag" id="HZq-Ry-fud">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setFlagTrack:" target="Ady-hI-5gd" id="hEO-lb-lYI"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Back to Last Flag" enabled="NO" keyEquivalent="R" identifier="backToFlag" id="KFa-M8-6ZU">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="backToFlag:" target="Ady-hI-5gd" id="Lbf-3R-yWl"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="I9c-H7-N0w"/>
+                                        <menuItem title="Reset Elevation" keyEquivalent="0" identifier="resetElevation" id="Xdf-AR-zlV">
+                                            <attributedString key="attributedTitle"/>
+                                            <connections>
+                                                <action selector="resetElevation:" target="Ady-hI-5gd" id="iDx-Qz-F84"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Window" id="aUF-d1-5bR">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
+                                    <items>
+                                        <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
+                                            <connections>
+                                                <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Zoom" id="R4o-n2-Eq4">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="performZoom:" target="Ady-hI-5gd" id="DIl-cC-cCs"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
+                                        <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="arrangeInFront:" target="Ady-hI-5gd" id="DRN-fu-gQh"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Help " id="wpr-3q-Mcd">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ReExplore" customModuleProvider="target">
+                    <connections>
+                        <outlet property="actionMenu" destination="rkl-eR-kge" id="VqG-of-nAs"/>
+                        <outlet property="navigationMenu" destination="51V-55-SPK" id="k9b-6J-wOi"/>
+                        <outlet property="trackMenu" destination="ODa-us-q4z" id="xy8-NH-5nc"/>
+                        <outlet property="viewMenu" destination="HyV-fh-RgO" id="DG6-t0-O7W"/>
+                    </connections>
+                </customObject>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1020" y="-533"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="ecE-fa-SXC">
+            <objects>
+                <viewController showSeguePresentationStyle="single" id="qAJ-gd-zFd" customClass="MapViewController" customModule="ReExplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="IIc-Vs-ZnG">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <mapView mapType="standard" showsCompass="NO" showsZoomControls="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZWF-W0-9s6">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </mapView>
+                            <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kh-1t-hTU">
+                                <rect key="frame" x="20" y="726" width="256" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="250" constant="256" id="5IR-f1-5NQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="cy3-dy-lvE"/>
+                                </constraints>
+                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="c5D-nC-BPW">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </searchFieldCell>
+                            </searchField>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wii-62-Ty4">
+                                <rect key="frame" x="862" y="20" width="142" height="20"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kjb-tb-gRq">
+                                        <rect key="frame" x="-7" y="-7" width="81" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iea-Uc-DMk">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="cancel:" target="qAJ-gd-zFd" id="GvZ-SQ-UQ4"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zF5-Nt-NTz">
+                                        <rect key="frame" x="68" y="-7" width="81" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Choose" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3Mk-gR-Pxx">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="chooseLocation:" target="qAJ-gd-zFd" id="fKR-HA-GCa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zF5-Nt-NTz" firstAttribute="width" secondItem="Kjb-tb-gRq" secondAttribute="width" id="wxz-HZ-ruo"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZWF-W0-9s6" secondAttribute="trailing" id="5kt-Gl-Xoj"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9kh-1t-hTU" secondAttribute="bottom" constant="20" symbolic="YES" id="67W-Eq-g8Q"/>
+                            <constraint firstItem="9kh-1t-hTU" firstAttribute="top" secondItem="IIc-Vs-ZnG" secondAttribute="top" constant="20" symbolic="YES" id="8SZ-Kj-bhj"/>
+                            <constraint firstItem="ZWF-W0-9s6" firstAttribute="top" secondItem="IIc-Vs-ZnG" secondAttribute="top" id="JFK-9C-qi8"/>
+                            <constraint firstAttribute="bottom" secondItem="Wii-62-Ty4" secondAttribute="bottom" constant="20" symbolic="YES" id="NqA-h2-SQg"/>
+                            <constraint firstItem="Wii-62-Ty4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9kh-1t-hTU" secondAttribute="bottom" constant="8" symbolic="YES" id="NvT-F0-NeI"/>
+                            <constraint firstItem="Wii-62-Ty4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IIc-Vs-ZnG" secondAttribute="leading" constant="20" symbolic="YES" id="ODM-Yf-enr"/>
+                            <constraint firstItem="9kh-1t-hTU" firstAttribute="leading" secondItem="IIc-Vs-ZnG" secondAttribute="leading" constant="20" symbolic="YES" id="TYf-JT-Sm4"/>
+                            <constraint firstAttribute="trailing" secondItem="Wii-62-Ty4" secondAttribute="trailing" constant="20" symbolic="YES" id="TpB-UT-loj"/>
+                            <constraint firstItem="ZWF-W0-9s6" firstAttribute="leading" secondItem="IIc-Vs-ZnG" secondAttribute="leading" id="VRq-F9-fXf"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9kh-1t-hTU" secondAttribute="trailing" constant="20" symbolic="YES" id="lbE-3N-xaZ"/>
+                            <constraint firstAttribute="bottom" secondItem="ZWF-W0-9s6" secondAttribute="bottom" id="uSj-mm-7LU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chooseButton" destination="zF5-Nt-NTz" id="ePR-oN-xG7"/>
+                        <outlet property="mapView" destination="ZWF-W0-9s6" id="3ad-z6-9yv"/>
+                        <outlet property="searchField" destination="9kh-1t-hTU" id="STB-YL-cMW"/>
+                    </connections>
+                </viewController>
+                <customObject id="hm1-5G-NuX" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="189"/>
+        </scene>
+        <!--In App Purchase View Controller-->
+        <scene sceneID="fWV-4q-QZi">
+            <objects>
+                <viewController storyboardIdentifier="InAppPurchaseViewController" id="OAZ-bZ-6jF" customClass="InAppPurchaseViewController" customModule="ReExplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="yEh-Mk-DRB">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="170"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6YF-g3-73y">
+                                <rect key="frame" x="296" y="13" width="141" height="32"/>
+                                <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="duw-3x-fQx">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="close:" target="OAZ-bZ-6jF" id="F18-2g-HGb"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cVZ-tw-zO4">
+                                <rect key="frame" x="18" y="134" width="32" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Title" id="HPb-Gu-40c">
+                                    <font key="font" metaFont="systemSemibold" size="13"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="U6v-VR-BgH">
+                                <rect key="frame" x="18" y="110" width="74" height="16"/>
+                                <textFieldCell key="cell" selectable="YES" title="Description" id="XSt-vG-iUF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WqB-hW-Pez">
+                                <rect key="frame" x="13" y="13" width="141" height="32"/>
+                                <buttonCell key="cell" type="push" title="Restore Purchase" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zFv-4P-OBm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="restorePurchases:" target="OAZ-bZ-6jF" id="pdS-44-MC2"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rzm-qK-IWq">
+                                <rect key="frame" x="296" y="100" width="141" height="32"/>
+                                <buttonCell key="cell" type="push" title="Purchase" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="za5-Ro-p6f">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="purchase:" target="OAZ-bZ-6jF" id="bDj-wq-RC1"/>
+                                </connections>
+                            </button>
+                            <progressIndicator maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="MoL-As-YQY">
+                                <rect key="frame" x="217" y="77" width="16" height="16"/>
+                            </progressIndicator>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="WqB-hW-Pez" secondAttribute="bottom" constant="20" symbolic="YES" id="0m7-XD-kYu"/>
+                            <constraint firstItem="rzm-qK-IWq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U6v-VR-BgH" secondAttribute="trailing" constant="8" symbolic="YES" id="2XP-k0-71R"/>
+                            <constraint firstAttribute="bottom" secondItem="6YF-g3-73y" secondAttribute="bottom" constant="20" symbolic="YES" id="3mg-0a-iTk"/>
+                            <constraint firstItem="WqB-hW-Pez" firstAttribute="leading" secondItem="yEh-Mk-DRB" secondAttribute="leading" constant="20" symbolic="YES" id="93z-r0-VPC"/>
+                            <constraint firstItem="U6v-VR-BgH" firstAttribute="leading" secondItem="yEh-Mk-DRB" secondAttribute="leading" constant="20" symbolic="YES" id="HdX-cS-6QH"/>
+                            <constraint firstAttribute="trailing" secondItem="rzm-qK-IWq" secondAttribute="trailing" constant="20" symbolic="YES" id="JNi-RD-jG5"/>
+                            <constraint firstItem="U6v-VR-BgH" firstAttribute="top" secondItem="cVZ-tw-zO4" secondAttribute="bottom" constant="8" symbolic="YES" id="K58-ut-apa"/>
+                            <constraint firstItem="WqB-hW-Pez" firstAttribute="top" relation="greaterThanOrEqual" secondItem="U6v-VR-BgH" secondAttribute="bottom" constant="8" symbolic="YES" id="Ks5-pj-r1z"/>
+                            <constraint firstItem="rzm-qK-IWq" firstAttribute="width" secondItem="WqB-hW-Pez" secondAttribute="width" id="O3e-He-Y93"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cVZ-tw-zO4" secondAttribute="trailing" constant="20" symbolic="YES" id="Uu9-2c-LD1"/>
+                            <constraint firstAttribute="trailing" secondItem="6YF-g3-73y" secondAttribute="trailing" constant="20" symbolic="YES" id="XAr-en-w2l"/>
+                            <constraint firstItem="6YF-g3-73y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WqB-hW-Pez" secondAttribute="trailing" constant="12" symbolic="YES" id="XiM-Ac-kxn"/>
+                            <constraint firstItem="cVZ-tw-zO4" firstAttribute="leading" secondItem="yEh-Mk-DRB" secondAttribute="leading" constant="20" symbolic="YES" id="b8L-gx-odx"/>
+                            <constraint firstItem="6YF-g3-73y" firstAttribute="width" secondItem="WqB-hW-Pez" secondAttribute="width" id="hW3-6M-w7g"/>
+                            <constraint firstItem="MoL-As-YQY" firstAttribute="centerY" secondItem="yEh-Mk-DRB" secondAttribute="centerY" id="nHT-VX-scO"/>
+                            <constraint firstItem="rzm-qK-IWq" firstAttribute="firstBaseline" secondItem="U6v-VR-BgH" secondAttribute="firstBaseline" id="npt-Zh-bVq"/>
+                            <constraint firstItem="MoL-As-YQY" firstAttribute="centerX" secondItem="yEh-Mk-DRB" secondAttribute="centerX" id="swM-L8-0uc"/>
+                            <constraint firstItem="cVZ-tw-zO4" firstAttribute="top" secondItem="yEh-Mk-DRB" secondAttribute="top" constant="20" symbolic="YES" id="wZH-T2-GLG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="U6v-VR-BgH" id="Ur2-GA-iLu"/>
+                        <outlet property="doneButton" destination="6YF-g3-73y" id="ZC4-lM-Wf8"/>
+                        <outlet property="progressIndicator" destination="MoL-As-YQY" id="rzA-VQ-QE0"/>
+                        <outlet property="purchaseButton" destination="rzm-qK-IWq" id="Xnt-2G-vil"/>
+                        <outlet property="restorePurchaseButton" destination="WqB-hW-Pez" id="AQz-dV-Ocd"/>
+                        <outlet property="titleTextField" destination="cVZ-tw-zO4" id="mFv-MC-FfW"/>
+                    </connections>
+                </viewController>
+                <customObject id="SEe-uR-yL4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-94" y="632"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="1ee-k6-JUn">
+            <objects>
+                <viewController title="About" id="9g5-Np-ddz" customClass="AboutViewController" customModule="ReExplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="NBP-mV-Vjs">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="508"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h4v-L8-pub">
+                                <rect key="frame" x="0.0" y="108" width="800" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="800" id="OqP-cs-h9I"/>
+                                    <constraint firstAttribute="height" constant="500" id="hRi-bq-oay"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="left" image="About" id="eRa-OM-H4K"/>
+                            </imageView>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="gTx-dW-4LU">
+                                <rect key="frame" x="376" y="20" width="406" height="80"/>
+                                <textFieldCell key="cell" selectable="YES" alignment="right" id="PY3-Um-f9w">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">Runner model by Matthew Kerswill, http://matthewkerswill.com
+Nature population models licenced from https://www.cgtrader.com Map material by Mapbox
+App developed by Flavian and Toni Kaufmann
+Twitter #tonik.173</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="9Qn-kw-71G" userLabel="n3xd btn">
+                                <rect key="frame" x="20" y="20" width="350" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="4cx-qa-ufp"/>
+                                    <constraint firstAttribute="width" secondItem="9Qn-kw-71G" secondAttribute="height" multiplier="35:8" id="SdN-XT-RJ6"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="n3xd-logo-hw" imagePosition="left" alignment="left" imageScaling="proportionallyDown" inset="2" id="kMs-Ku-XYb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gTx-dW-4LU" secondAttribute="trailing" constant="20" symbolic="YES" id="1Fz-Tn-Tjm"/>
+                            <constraint firstItem="gTx-dW-4LU" firstAttribute="top" secondItem="h4v-L8-pub" secondAttribute="bottom" constant="8" symbolic="YES" id="1og-7y-zRV"/>
+                            <constraint firstItem="gTx-dW-4LU" firstAttribute="height" secondItem="9Qn-kw-71G" secondAttribute="height" id="4uE-g5-JwC"/>
+                            <constraint firstItem="9Qn-kw-71G" firstAttribute="leading" secondItem="NBP-mV-Vjs" secondAttribute="leading" constant="20" symbolic="YES" id="Rdi-fz-YFL"/>
+                            <constraint firstItem="h4v-L8-pub" firstAttribute="top" secondItem="NBP-mV-Vjs" secondAttribute="top" constant="-100" id="eut-RO-G2C"/>
+                            <constraint firstAttribute="trailing" secondItem="h4v-L8-pub" secondAttribute="trailing" id="hC7-1l-3B5"/>
+                            <constraint firstItem="9Qn-kw-71G" firstAttribute="top" secondItem="h4v-L8-pub" secondAttribute="bottom" constant="8" symbolic="YES" id="jXq-Zq-f3Q"/>
+                            <constraint firstItem="h4v-L8-pub" firstAttribute="leading" secondItem="NBP-mV-Vjs" secondAttribute="leading" id="xfQ-rN-kGE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="6kS-88-CzM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-94" y="-1289"/>
+        </scene>
+        <!--Preferences-->
+        <scene sceneID="20r-kJ-PtX">
+            <objects>
+                <viewController title="Preferences" showSeguePresentationStyle="single" id="07o-oS-A0S" customClass="PreferencesViewController" customModule="ReExplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Q7e-8v-TjS">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Wh-C9-1ta">
+                                <rect key="frame" x="18" y="263" width="412" height="18"/>
+                                <buttonCell key="cell" type="check" title="Populate terrain" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="tkU-gQ-Aam">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="populateTerrain:" target="07o-oS-A0S" id="E52-zC-r1N"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dst-lT-Rb6">
+                                <rect key="frame" x="18" y="241" width="412" height="18"/>
+                                <buttonCell key="cell" type="check" title="Show intro movie" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="aQz-by-jnY">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="showIntroMovie:" target="07o-oS-A0S" id="Bdl-Sx-Cwv"/>
+                                </connections>
+                            </button>
+                            <segmentedControl hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kYL-vE-dvu">
+                                <rect key="frame" x="18" y="19" width="215" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectOne" id="5Z3-ff-lbf">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="Runner" image="figure.walk" catalog="system" width="103"/>
+                                        <segment label="Biker" image="bicycle" catalog="system" width="103" selected="YES" tag="1"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="switchedGear:" target="07o-oS-A0S" id="2PQ-7B-I71"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F2F-wE-FBm">
+                                <rect key="frame" x="384" y="23" width="48" height="16"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="5" id="ibb-rG-ZDX">
+                                        <connections>
+                                            <action selector="toggleDebugControls:" target="07o-oS-A0S" id="e2t-n5-RHL"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="version" id="g7y-wF-zuu">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PT1-cs-Ryi">
+                                <rect key="frame" x="318" y="216" width="117" height="64"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tnN-wh-gkI">
+                                        <rect key="frame" x="-2" y="47" width="93" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Display fps" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1LF-CR-gHF">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="displayFps:" target="07o-oS-A0S" id="cGa-JI-dl4"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QO9-6T-oIg">
+                                        <rect key="frame" x="-2" y="23" width="107" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Use shadows" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="TiG-04-PI2">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="useShadows:" target="07o-oS-A0S" id="uiN-m8-V52"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sa9-13-nnF">
+                                        <rect key="frame" x="-2" y="-1" width="119" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Max population" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="i6b-kx-L1t">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="maxPopulation:" target="07o-oS-A0S" id="UdD-dY-iRX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="9" id="wKJ-ue-0GM">
+                                        <connections>
+                                            <action selector="clearStore:" target="07o-oS-A0S" id="4lM-2s-2VV"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="F2F-wE-FBm" secondAttribute="trailing" constant="20" symbolic="YES" id="1uT-if-il9"/>
+                            <constraint firstItem="F2F-wE-FBm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kYL-vE-dvu" secondAttribute="trailing" constant="20" id="Huw-4f-4Zm"/>
+                            <constraint firstItem="dst-lT-Rb6" firstAttribute="leading" secondItem="Q7e-8v-TjS" secondAttribute="leading" constant="20" symbolic="YES" id="K1a-ET-RXS"/>
+                            <constraint firstItem="dst-lT-Rb6" firstAttribute="top" secondItem="0Wh-C9-1ta" secondAttribute="bottom" constant="6" symbolic="YES" id="Mdb-lV-Hw5"/>
+                            <constraint firstItem="kYL-vE-dvu" firstAttribute="leading" secondItem="Q7e-8v-TjS" secondAttribute="leading" constant="20" symbolic="YES" id="V8O-QV-pU9"/>
+                            <constraint firstAttribute="trailing" secondItem="dst-lT-Rb6" secondAttribute="trailing" constant="20" id="cLd-Nh-rz6"/>
+                            <constraint firstAttribute="bottom" secondItem="kYL-vE-dvu" secondAttribute="bottom" constant="20" symbolic="YES" id="mC5-t6-HpT"/>
+                            <constraint firstItem="0Wh-C9-1ta" firstAttribute="top" secondItem="Q7e-8v-TjS" secondAttribute="top" constant="20" symbolic="YES" id="pe0-pX-GPk"/>
+                            <constraint firstAttribute="trailing" secondItem="0Wh-C9-1ta" secondAttribute="trailing" constant="20" id="qhG-u1-SNd"/>
+                            <constraint firstItem="kYL-vE-dvu" firstAttribute="centerY" secondItem="F2F-wE-FBm" secondAttribute="centerY" id="sjs-xn-GQG"/>
+                            <constraint firstItem="0Wh-C9-1ta" firstAttribute="leading" secondItem="Q7e-8v-TjS" secondAttribute="leading" constant="20" symbolic="YES" id="wn0-wW-b8b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="debugControlsView" destination="PT1-cs-Ryi" id="3Z5-cy-IYQ"/>
+                        <outlet property="displayFpsBtn" destination="tnN-wh-gkI" id="JyP-Yp-diY"/>
+                        <outlet property="gearSwitch" destination="kYL-vE-dvu" id="7ko-In-vRu"/>
+                        <outlet property="maxPopulationBtn" destination="Sa9-13-nnF" id="QWz-wx-HHv"/>
+                        <outlet property="populateTerrainBtn" destination="0Wh-C9-1ta" id="b6i-Lc-PcQ"/>
+                        <outlet property="showIntroMovieBtn" destination="dst-lT-Rb6" id="fTH-lB-MG4"/>
+                        <outlet property="useShadowsBtn" destination="QO9-6T-oIg" id="Rev-kL-Rbw"/>
+                        <outlet property="versionLabel" destination="F2F-wE-FBm" id="BFD-AC-2dU"/>
+                    </connections>
+                </viewController>
+                <customObject id="xq1-n7-hLw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1044" y="-944"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="ViewController" customModule="ReExplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="m2S-Jp-Qdl" customClass="GameView" customModule="ReExplore" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="732" height="518"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="gf6-Jr-EfT">
+                                <rect key="frame" x="20" y="474" width="48" height="24"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1001" translatesAutoresizingMaskIntoConstraints="NO" id="i4g-OJ-2Ub">
+                                        <rect key="frame" x="-2" y="0.0" width="52" height="24"/>
+                                        <gestureRecognizers>
+                                            <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="2zt-YD-RNO">
+                                                <connections>
+                                                    <action selector="copyGPX:" target="m2S-Jp-Qdl" id="1Gc-G7-aUt"/>
+                                                </connections>
+                                            </clickGestureRecognizer>
+                                        </gestureRecognizers>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="Lg2-Sq-Zzl">
+                                            <font key="font" metaFont="system" size="20"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="i4g-OJ-2Ub" firstAttribute="leading" secondItem="gf6-Jr-EfT" secondAttribute="leading" id="LUo-aA-NFh"/>
+                                    <constraint firstItem="i4g-OJ-2Ub" firstAttribute="top" secondItem="gf6-Jr-EfT" secondAttribute="top" id="aHE-49-KH3"/>
+                                    <constraint firstAttribute="bottom" secondItem="i4g-OJ-2Ub" secondAttribute="bottom" id="iC0-k7-Mmx"/>
+                                    <constraint firstAttribute="trailing" secondItem="i4g-OJ-2Ub" secondAttribute="trailing" id="qI9-Vh-L4Z"/>
+                                </constraints>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="MOr-55-CeX" customClass="MiniGameView" customModule="ReExplore" customModuleProvider="target">
+                                <rect key="frame" x="529" y="369" width="183" height="129"/>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="gf6-Jr-EfT" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="CZr-e9-lJp"/>
+                            <constraint firstItem="gf6-Jr-EfT" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="CaH-Mq-69Y"/>
+                            <constraint firstItem="MOr-55-CeX" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="Ja7-qB-FOe"/>
+                            <constraint firstAttribute="trailing" secondItem="MOr-55-CeX" secondAttribute="trailing" constant="20" symbolic="YES" id="Zw0-rH-E4T"/>
+                            <constraint firstItem="MOr-55-CeX" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" multiplier="0.25" id="drd-zh-WsX"/>
+                            <constraint firstItem="MOr-55-CeX" firstAttribute="height" secondItem="m2S-Jp-Qdl" secondAttribute="height" multiplier="0.25" id="fp5-pc-1lc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="fxr-sB-gVy"/>
+            </objects>
+            <point key="canvasLocation" x="-903" y="587"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="a1I-5u-ol1">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="IE6-9s-vUX" customClass="WindowController" customModule="ReExplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="ReExplore" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="y7z-XJ-AVN">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="461" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
+                        <toolbar key="toolbar" implicitIdentifier="0BFF7950-813D-4BEC-9605-ECCDF86D26B4" showsBaselineSeparator="NO" displayMode="iconAndLabel" sizeMode="regular" id="HpV-ZH-BIU">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="4HA-i3-s26"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="D1F-qr-dRP"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="D1F-qr-dRP"/>
+                            </defaultToolbarItems>
+                            <connections>
+                                <outlet property="delegate" destination="IE6-9s-vUX" id="w9j-z4-dJ2"/>
+                            </connections>
+                        </toolbar>
+                        <connections>
+                            <outlet property="delegate" destination="IE6-9s-vUX" id="zk8-61-W5I"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <outlet property="aboveGroundSlider" destination="EV3-wX-Wbl" id="sHM-Pl-tEq"/>
+                        <outlet property="cameraChooserView" destination="SvE-6b-XTk" id="xPE-9p-HTp"/>
+                        <outlet property="cameraTypeChooser" destination="mav-C6-wIY" id="59v-9K-9fX"/>
+                        <outlet property="debugInfoView" destination="Yw6-I7-qRJ" id="DYp-mY-Hru"/>
+                        <outlet property="gpxChooserView" destination="mFV-tT-9IC" id="o6Z-Ko-eQG"/>
+                        <outlet property="locationChooserBtn" destination="Cy0-Yy-bk9" id="fyY-KZ-Upc"/>
+                        <outlet property="mapView" destination="7Ax-9j-vZE" id="ldj-aR-Tfu"/>
+                        <outlet property="showGpxCheckbox" destination="KvL-8N-aYS" id="IEx-s6-3XH"/>
+                        <outlet property="terrainProgressView" destination="Hdb-TJ-JBL" id="8IL-pG-M1a"/>
+                        <outlet property="terrainSegmentView" destination="xmz-OX-udR" id="kQV-Fc-mLQ"/>
+                        <outlet property="terrainStyleChooser" destination="sUG-KZ-3l8" id="ZAH-3U-Sff"/>
+                        <outlet property="tileInfoCheckbox" destination="nhf-V4-hjE" id="dNA-1N-1YP"/>
+                        <outlet property="toolbar" destination="HpV-ZH-BIU" id="Vgy-hT-n1T"/>
+                        <outlet property="trackBackBtn" destination="LY3-Uk-t0m" id="3r1-Pm-8Wa"/>
+                        <outlet property="trackFlagBtn" destination="TSi-lk-VQS" id="NB8-qm-oz5"/>
+                        <outlet property="trackRecordBtn" destination="Bv0-lr-fbI" id="Hap-u2-7Ck"/>
+                        <outlet property="uploadGpxBtn" destination="yhx-oy-nt8" id="uFE-mu-TGp"/>
+                        <outlet property="wireframeCheckbox" destination="CHn-vz-Npq" id="NpB-Iu-tZB"/>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="5eM-uh-zEK"/>
+                    </connections>
+                </windowController>
+                <customView id="Yw6-I7-qRJ" userLabel="DebugView">
+                    <rect key="frame" x="0.0" y="0.0" width="208" height="35"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <subviews>
+                        <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AgJ-oW-1gQ">
+                            <rect key="frame" x="0.0" y="0.0" width="208" height="35"/>
+                            <subviews>
+                                <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhf-V4-hjE">
+                                    <rect key="frame" x="-2" y="9" width="115" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Tile Info" bezelStyle="regularSquare" imagePosition="left" inset="2" id="c8d-gI-FsK">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="changeTerrainInfo:" target="IE6-9s-vUX" id="89t-LN-7lA"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CHn-vz-Npq">
+                                    <rect key="frame" x="119" y="9" width="89" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Wireframe" bezelStyle="regularSquare" imagePosition="left" inset="2" id="NCT-Iv-RI1">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="changeWireframe:" target="IE6-9s-vUX" id="PQE-Bp-U5k"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="AgJ-oW-1gQ" firstAttribute="top" secondItem="Yw6-I7-qRJ" secondAttribute="top" id="HtT-QO-5jp"/>
+                        <constraint firstItem="AgJ-oW-1gQ" firstAttribute="leading" secondItem="Yw6-I7-qRJ" secondAttribute="leading" id="Zpg-50-BeH"/>
+                        <constraint firstAttribute="bottom" secondItem="AgJ-oW-1gQ" secondAttribute="bottom" id="cfN-lf-Ajo"/>
+                        <constraint firstAttribute="trailing" secondItem="AgJ-oW-1gQ" secondAttribute="trailing" id="zBN-ek-AIl"/>
+                    </constraints>
+                </customView>
+                <customView id="SvE-6b-XTk" userLabel="CameraView">
+                    <rect key="frame" x="0.0" y="0.0" width="334" height="22"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <subviews>
+                        <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vsv-n6-LGm">
+                            <rect key="frame" x="0.0" y="0.0" width="334" height="22"/>
+                            <subviews>
+                                <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mav-C6-wIY">
+                                    <rect key="frame" x="-2" y="-1" width="230" height="24"/>
+                                    <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectOne" id="HX1-Cq-PEt">
+                                        <font key="font" metaFont="system"/>
+                                        <segments>
+                                            <segment label="Scene" image="figure.walk" catalog="system" selected="YES"/>
+                                            <segment label="Map" image="map" tag="1"/>
+                                        </segments>
+                                    </segmentedCell>
+                                    <connections>
+                                        <action selector="changeCameraTypeBySegment:" target="IE6-9s-vUX" id="xHp-qW-baP"/>
+                                    </connections>
+                                </segmentedControl>
+                                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EV3-wX-Wbl">
+                                    <rect key="frame" x="232" y="-5" width="104" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="b4G-BD-h7o"/>
+                                    </constraints>
+                                    <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="30" doubleValue="30" tickMarkPosition="above" sliderType="linear" id="BaI-el-X1R"/>
+                                    <connections>
+                                        <action selector="aboveGroundChanged:" target="IE6-9s-vUX" id="hSd-90-1Nr"/>
+                                    </connections>
+                                </slider>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="vsv-n6-LGm" secondAttribute="trailing" id="7Qf-Yt-E5F"/>
+                        <constraint firstItem="vsv-n6-LGm" firstAttribute="top" secondItem="SvE-6b-XTk" secondAttribute="top" id="Oyy-86-8my"/>
+                        <constraint firstItem="vsv-n6-LGm" firstAttribute="leading" secondItem="SvE-6b-XTk" secondAttribute="leading" id="i7J-Fm-qmL"/>
+                        <constraint firstAttribute="bottom" secondItem="vsv-n6-LGm" secondAttribute="bottom" id="kwu-Vo-UxQ"/>
+                    </constraints>
+                </customView>
+                <customView id="mFV-tT-9IC" userLabel="GpxChooserView">
+                    <rect key="frame" x="0.0" y="0.0" width="598" height="60"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <subviews>
+                        <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DaL-qe-Agi">
+                            <rect key="frame" x="0.0" y="0.0" width="598" height="60"/>
+                            <subviews>
+                                <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LY3-Uk-t0m">
+                                    <rect key="frame" x="-7" y="13" width="236" height="32"/>
+                                    <buttonCell key="cell" type="push" title="0" bezelStyle="rounded" image="chevron.left.2" catalog="system" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VbX-h1-YuV">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="trackBack:" target="IE6-9s-vUX" id="bE5-ff-qCm"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bv0-lr-fbI">
+                                    <rect key="frame" x="223" y="13" width="77" height="32"/>
+                                    <buttonCell key="cell" type="push" title="Record" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7Rv-ji-DBf">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="record:" target="IE6-9s-vUX" id="oM6-Hx-uUg"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSi-lk-VQS">
+                                    <rect key="frame" x="294" y="13" width="45" height="32"/>
+                                    <buttonCell key="cell" type="push" bezelStyle="rounded" image="flag" catalog="system" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Tc5-EV-pzZ">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="flagLocation:" target="IE6-9s-vUX" id="kxF-a5-0q9"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhx-oy-nt8">
+                                    <rect key="frame" x="333" y="13" width="133" height="32"/>
+                                    <buttonCell key="cell" type="push" title="Upload GPX…" bezelStyle="rounded" image="arrow.up" catalog="system" imagePosition="leading" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="w7W-1j-UO5">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="uploadGpx:" target="IE6-9s-vUX" id="P4e-r7-S2i"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KvL-8N-aYS">
+                                    <rect key="frame" x="465" y="21" width="133" height="18"/>
+                                    <buttonCell key="cell" type="check" title="No GPX uploaded" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Q2q-2y-DNW">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="gpxDisplayChanged:" target="IE6-9s-vUX" id="mCc-7t-Gi7"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="DaL-qe-Agi" firstAttribute="leading" secondItem="mFV-tT-9IC" secondAttribute="leading" id="DjH-sb-NDl"/>
+                        <constraint firstAttribute="bottom" secondItem="DaL-qe-Agi" secondAttribute="bottom" id="NsX-CN-NfG"/>
+                        <constraint firstAttribute="trailing" secondItem="DaL-qe-Agi" secondAttribute="trailing" id="hrp-ob-v7E"/>
+                        <constraint firstItem="DaL-qe-Agi" firstAttribute="top" secondItem="mFV-tT-9IC" secondAttribute="top" id="zPK-o5-NTG"/>
+                    </constraints>
+                </customView>
+                <customView id="7Ax-9j-vZE" userLabel="MapView">
+                    <rect key="frame" x="0.0" y="0.0" width="195" height="20"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <subviews>
+                        <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Csx-5Y-rBV">
+                            <rect key="frame" x="0.0" y="0.0" width="195" height="20"/>
+                            <subviews>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cy0-Yy-bk9">
+                                    <rect key="frame" x="-7" y="-7" width="209" height="32"/>
+                                    <buttonCell key="cell" type="push" title="Location" bezelStyle="rounded" image="mappin.and.ellipse" catalog="system" imagePosition="leading" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sXN-Ww-HN8">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <segue destination="qAJ-gd-zFd" kind="sheet" identifier="showMap" destinationCreationSelector="mapSegue:sender:" id="dpV-CQ-mJJ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Csx-5Y-rBV" secondAttribute="trailing" id="ANH-uZ-rcZ"/>
+                        <constraint firstItem="Csx-5Y-rBV" firstAttribute="top" secondItem="7Ax-9j-vZE" secondAttribute="top" id="JOK-Xv-ZL7"/>
+                        <constraint firstItem="Csx-5Y-rBV" firstAttribute="leading" secondItem="7Ax-9j-vZE" secondAttribute="leading" id="j7t-QT-FXI"/>
+                        <constraint firstAttribute="bottom" secondItem="Csx-5Y-rBV" secondAttribute="bottom" id="x24-eh-MRB"/>
+                    </constraints>
+                </customView>
+                <customView id="xmz-OX-udR" userLabel="TerrainStyleView">
+                    <rect key="frame" x="0.0" y="0.0" width="625" height="38"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <subviews>
+                        <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3kM-It-mpW">
+                            <rect key="frame" x="0.0" y="0.0" width="625" height="38"/>
+                            <subviews>
+                                <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sUG-KZ-3l8">
+                                    <rect key="frame" x="-2" y="7" width="605" height="24"/>
+                                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="RBr-JB-bHH">
+                                        <font key="font" metaFont="system"/>
+                                        <segments>
+                                            <segment label="Map" image="map" selected="YES"/>
+                                            <segment label="Satellite" image="globe" catalog="system" tag="1"/>
+                                            <segment label="Mixed" image="arrow.triangle.merge" catalog="system" tag="2"/>
+                                            <segment label="Enhanced" tag="3"/>
+                                            <segment label="Custom" enabled="NO" tag="4"/>
+                                        </segments>
+                                    </segmentedCell>
+                                    <connections>
+                                        <action selector="changeTerrainStyleBySegment:" target="IE6-9s-vUX" id="LPo-QN-nTd"/>
+                                    </connections>
+                                </segmentedControl>
+                                <progressIndicator autoresizesSubviews="NO" wantsLayer="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Hdb-TJ-JBL">
+                                    <rect key="frame" x="609" y="11" width="16" height="16"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="16" id="C5Q-8p-j0U"/>
+                                    </constraints>
+                                </progressIndicator>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="3kM-It-mpW" secondAttribute="bottom" id="4bf-Co-uqJ"/>
+                        <constraint firstAttribute="trailing" secondItem="3kM-It-mpW" secondAttribute="trailing" id="733-gF-Ds4"/>
+                        <constraint firstItem="3kM-It-mpW" firstAttribute="leading" secondItem="xmz-OX-udR" secondAttribute="leading" id="KYP-24-5S5"/>
+                        <constraint firstItem="3kM-It-mpW" firstAttribute="top" secondItem="xmz-OX-udR" secondAttribute="top" id="f07-h7-WfY"/>
+                    </constraints>
+                </customView>
+                <customObject id="a53-YJ-b7W" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-983" y="-60"/>
+        </scene>
+        <!--Intro Movie-->
+        <scene sceneID="Jqb-QL-ko2">
+            <objects>
+                <viewController title="Intro Movie" storyboardIdentifier="introViewController" showSeguePresentationStyle="single" id="8gP-EW-VV7" customClass="IntroViewController" customModule="ReExplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="dYj-am-Ay3">
+                        <rect key="frame" x="0.0" y="0.0" width="960" height="540"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <avPlayerView fixedFrame="YES" controlsStyle="inline" showsSharingServiceButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VuJ-5O-1kp">
+                                <rect key="frame" x="0.0" y="0.0" width="960" height="540"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </avPlayerView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="playerView" destination="VuJ-5O-1kp" id="SbR-g1-do5"/>
+                    </connections>
+                </viewController>
+                <customObject id="Xqa-bB-u34" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-102" y="-522"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="About" width="1254" height="836"/>
+        <image name="arrow.triangle.merge" catalog="system" width="11" height="13"/>
+        <image name="arrow.up" catalog="system" width="13" height="14"/>
+        <image name="bicycle" catalog="system" width="24" height="15"/>
+        <image name="chevron.left.2" catalog="system" width="15" height="14"/>
+        <image name="figure.walk" catalog="system" width="13" height="17"/>
+        <image name="flag" catalog="system" width="15" height="15"/>
+        <image name="globe" catalog="system" width="15" height="15"/>
+        <image name="map" width="14" height="13"/>
+        <image name="mappin.and.ellipse" catalog="system" width="15" height="16"/>
+        <image name="n3xd-logo-hw" width="2454" height="634"/>
+    </resources>
+</document>
